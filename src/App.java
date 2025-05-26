@@ -4,28 +4,14 @@ public class App {
 
     public static void main(String[] args) {
 
-        List<String> lista = new LinkedList<>();
-        //CREATE
-        lista.add("João");
-        lista.add("Maria");
-        lista.add(1, "Pedro");
-        //READ
-        System.out.println(lista);
-        System.out.println(lista.get(0));
-        //DELETE
-        lista.remove("João");
-        System.out.println(lista);
-        System.out.println(lista.indexOf("Maria"));
-        System.out.println(lista.contains("Maria"));
-        //UPDATE
-        lista.set(1, "Maria da Silva");
-        System.out.println(lista);
-        lista.add("Ana");
-        lista.add("José");
-
-        for(String s : lista){
-            System.out.println(s);
-        }
+        Professor professor = new Professor("111.111.111-01",
+                "João", 5000);
+        Turma poo = new Turma(professor, "POO");
+        poo.adicionarAluno(new Aluno("222.222.222-02",
+                "Maria", 1));
+        poo.adicionarAluno(new Aluno("333.333.333-03",
+                "José", 2));
+        System.out.println(poo);
 
     }
 
