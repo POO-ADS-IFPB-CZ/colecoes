@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class PlayList {
@@ -19,6 +21,16 @@ public class PlayList {
     public List<Musica> getMusicas() {
         return musicas;
     }
+
+    public void embaralharPlaylist(){
+        Collections.shuffle(musicas);
+    }
+
+    public void ordenarPorAno(){
+        Collections.sort(musicas, Comparator.comparing(Musica :: getAno));
+    }
+
+    //TODO: Criar outras opções de ordenação
 
     public String getNome() {
         return nome;
