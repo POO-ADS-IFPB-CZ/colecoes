@@ -4,17 +4,18 @@ public class App {
 
     public static void main(String[] args) {
 
-        PlayList playList = new PlayList("Minhas músicas");
+        List<String> nomes = List.of("João","Maria",
+                "Pedro", "José", "Ana", "Paulo");
 
-        playList.adicionarMusica(new Musica("Gostava tanto de você",
-                "Tim Maia", 1973));
-        playList.adicionarMusica(new Musica("Leviana",
-                "Zezo", 2000));
-        playList.adicionarMusica(new Musica("Nothing else matters",
-                "Metallica", 1991));
+        nomes.stream()
+                .filter(n -> n.startsWith("P"))
+                .forEach(n -> System.out.println(n));
 
-        playList.ordenarPorAno();
-        System.out.println(playList);
+        for(String nome: nomes){
+            if(nome.startsWith("P")){
+                System.out.println(nome);
+            }
+        }
 
     }
 
