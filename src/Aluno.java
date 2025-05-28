@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Aluno {
+public class Aluno implements Comparable<Aluno> {
 
     private String cpf;
     private String nome;
@@ -56,5 +56,10 @@ public class Aluno {
     @Override
     public int hashCode() {
         return Objects.hashCode(cpf);
+    }
+
+    @Override
+    public int compareTo(Aluno o) {
+        return matricula - o.matricula;
     }
 }
