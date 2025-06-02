@@ -1,4 +1,6 @@
+import java.time.Duration;
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Pessoa {
 
@@ -34,6 +36,10 @@ public class Pessoa {
 
     public void setNascimento(LocalDate nascimento) {
         this.nascimento = nascimento;
+    }
+
+    public int getIdade(){
+        return Period.between(nascimento, LocalDate.now()).getYears();
     }
 
     @Override
