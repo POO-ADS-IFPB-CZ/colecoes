@@ -13,11 +13,19 @@ public class App {
         pessoas.add(new Pessoa("222.222.222-02",
         "Ana", LocalDate.of(2001,6,2)));
 
-        //COMO fazer
-        for(Pessoa p : pessoas) System.out.println(p);
-        //O QUE fazer
-        pessoas.stream().forEach(System.out::println);
+        //COMO
+        Pessoa menorPessoa = pessoas.get(0);
+        for(int i=0; i<pessoas.size(); i++){
+            if(pessoas.get(i).getNascimento()
+                    .isAfter(menorPessoa.getNascimento())){
+                menorPessoa = pessoas.get(i);
+            }
+        }
+        System.out.println(menorPessoa);
 
+        //O QUE
+        System.out.println(pessoas.stream()
+                .min(Comparator.comparing(Pessoa::getNascimento)));
 
     }
 
