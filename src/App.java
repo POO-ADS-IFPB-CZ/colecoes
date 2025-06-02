@@ -13,9 +13,10 @@ public class App {
         pessoas.add(new Pessoa("222.222.222-02",
         "Ana", LocalDate.of(2001,6,2)));
 
-        Collections.sort(pessoas,
-                Comparator.comparing(Pessoa::getCpf));
-        System.out.println(pessoas);
+        //COMO fazer
+        for(Pessoa p : pessoas) System.out.println(p);
+        //O QUE fazer
+        pessoas.stream().forEach(System.out::println);
 
 
     }
